@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             H1 = new Label();
             textBox1 = new TextBox();
@@ -35,6 +36,8 @@
             button2 = new Button();
             label1 = new Label();
             label2 = new Label();
+            button3 = new Button();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // H1
@@ -59,14 +62,13 @@
             textBox1.Size = new Size(175, 19);
             textBox1.TabIndex = 1;
             textBox1.TextAlign = HorizontalAlignment.Center;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(20, 20, 20);
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = SystemColors.ControlLight;
-            button1.Location = new Point(67, 143);
+            button1.Location = new Point(68, 132);
             button1.Name = "button1";
             button1.Size = new Size(104, 28);
             button1.TabIndex = 3;
@@ -79,7 +81,7 @@
             button2.BackColor = Color.FromArgb(20, 20, 20);
             button2.FlatStyle = FlatStyle.Popup;
             button2.ForeColor = SystemColors.ControlLight;
-            button2.Location = new Point(67, 186);
+            button2.Location = new Point(68, 166);
             button2.Name = "button2";
             button2.Size = new Size(104, 28);
             button2.TabIndex = 4;
@@ -91,7 +93,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(34, 74);
+            label1.Location = new Point(34, 80);
             label1.Name = "label1";
             label1.Size = new Size(95, 12);
             label1.TabIndex = 2;
@@ -101,31 +103,55 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("MS Gothic", 6F);
-            label2.Location = new Point(73, 236);
+            label2.Location = new Point(72, 242);
             label2.Name = "label2";
             label2.Size = new Size(96, 8);
             label2.TabIndex = 5;
             label2.Text = "Shutdown Timer by Lefty";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(20, 20, 20);
+            button3.FlatStyle = FlatStyle.Popup;
+            button3.ForeColor = SystemColors.ControlLight;
+            button3.Location = new Point(68, 200);
+            button3.Name = "button3";
+            button3.Size = new Size(104, 28);
+            button3.TabIndex = 6;
+            button3.Text = "No Win Update";
+            toolTip1.SetToolTip(button3, "Shutdown PC immediately without Windows Updates");
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // toolTip1
+            // 
+            toolTip1.BackColor = SystemColors.InactiveCaptionText;
+            toolTip1.ForeColor = SystemColors.InactiveBorder;
+            toolTip1.ToolTipIcon = ToolTipIcon.Info;
+            toolTip1.ToolTipTitle = "Force Shutdown";
+            toolTip1.Popup += toolTip1_Popup;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(6F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
-            ClientSize = new Size(249, 253);
+            ClientSize = new Size(249, 257);
+            Controls.Add(button3);
             Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(H1);
+            Cursor = Cursors.Hand;
             Font = new Font("MS Gothic", 9F);
             ForeColor = SystemColors.InactiveBorder;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
-            Opacity = 0.95D;
+            Opacity = 0.98D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Lefty Timer";
             ResumeLayout(false);
@@ -140,5 +166,7 @@
         private Button button1;
         private Button button2;
         private Label label2;
+        private Button button3;
+        private ToolTip toolTip1;
     }
 }
