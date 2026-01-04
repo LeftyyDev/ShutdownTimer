@@ -1,4 +1,6 @@
-﻿namespace Shutdown_Timer
+﻿using System.Windows.Forms;
+
+namespace Shutdown_Timer
 {
     partial class Form1
     {
@@ -35,9 +37,9 @@
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
-            label2 = new Label();
             button3 = new Button();
             toolTip1 = new ToolTip(components);
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // H1
@@ -99,16 +101,6 @@
             label1.TabIndex = 2;
             label1.Text = "Zeit in Stunden";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("MS Gothic", 6F);
-            label2.Location = new Point(72, 242);
-            label2.Name = "label2";
-            label2.Size = new Size(96, 8);
-            label2.TabIndex = 5;
-            label2.Text = "Shutdown Timer by Lefty";
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(20, 20, 20);
@@ -131,14 +123,32 @@
             toolTip1.ToolTipTitle = "Force Shutdown";
             toolTip1.Popup += toolTip1_Popup;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = Color.Silver;
+            linkLabel1.AutoSize = true;
+            linkLabel1.ForeColor = SystemColors.InactiveCaption;
+            linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
+            linkLabel1.LinkColor = Color.FromArgb(224, 224, 224);
+            linkLabel1.Location = new Point(49, 239);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(143, 12);
+            linkLabel1.TabIndex = 7;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Shutdown Timer by Lefty";
+            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            linkLabel1.VisitedLinkColor = Color.Gray;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(6F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
             ClientSize = new Size(249, 257);
+            Controls.Add(linkLabel1);
             Controls.Add(button3);
-            Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -165,8 +175,8 @@
         private Label label1;
         private Button button1;
         private Button button2;
-        private Label label2;
         private Button button3;
         private ToolTip toolTip1;
+        private LinkLabel linkLabel1;
     }
 }

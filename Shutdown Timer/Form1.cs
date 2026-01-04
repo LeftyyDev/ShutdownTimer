@@ -74,5 +74,14 @@ namespace Shutdown_Timer
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/LeftyyDev",
+                UseShellExecute = true
+            });
+        }
     }
 }
